@@ -87,5 +87,9 @@ int main(void)
             break;
     }
 
+    (superPoder1 > superPoder2) 
+        ? printf("SuperTrunfo: Carta 1 Venceu!\n") 
+        : printf("SuperTrunfo: Carta 2 venceu!\n");
+
     return 0;
 }
