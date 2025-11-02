@@ -25,48 +25,67 @@ int main(void)
     float pibPerCapita2 = pib2 / populacao2;
     float superPoder2 = populacao2 + area2 + pib2 + densidade2 + pibPerCapita2;
 
-    printf("Comparação de Cartas: (Atributo: Populacao):\n\n");
+    int entradaUsuario;
 
-    printf("Carta 1 - São Paulo (SP): %d\n", populacao1);
+    // Tipo de opcoes que o usuario recebera em tela
+    printf("Escolha a opcao desejada: Ex.: 1\n");
+    printf("1 - Populacao\n");
+    printf("2 - Area\n");
+    printf("3 - Pib\n");
+    printf("4 - Numero de pontos turisticos\n");
+    printf("5 - Densidade demografica\n");
 
-    printf("Carta 2 - Rio de Janeiro (RJ): %d\n", populacao2);
+    // Recebe o input do usuario
+    scanf("%d", &entradaUsuario);
 
-    printf("Resultado: Carta 1 (São Paulo) venceu!\n");
-
-    // if (populacao1 > populacao2)
-    //     printf("População: Carta 1 venceu (1)\n");
-    // else
-    //     printf("População: Carta 2 venceu (0)\n");
-
-    // if (area1 > area2)
-    //     printf("Área: Carta 1 venceu (1)\n");
-    // else
-    //     printf("Área: Carta 2 venceu (0)\n");
-
-    // if (pib1 > pib2)
-    //     printf("PIB: Carta 1 venceu (1)\n");
-    // else
-    //     printf("PIB: Carta 2 venceu (0)\n");
-
-    // if (numeroPontoTuristicos1 > numeroPontoTuristicos2)
-    //     printf("Pontos Turísticos: Carta 1 venceu (1)\n");
-    // else
-    //     printf("Pontos Turísticos: Carta 2 venceu (0)\n");
-
-    // if (densidade1 < densidade2)
-    //     printf("Densidade Populacional: Carta 1 venceu (1)\n");
-    // else
-    //     printf("Densidade Populacional: Carta 2 venceu (0)\n");
-
-    // if (pibPerCapita1 > pibPerCapita2)
-    //     printf("PIB per Capita: Carta 1 venceu (1)\n");
-    // else
-    //     printf("PIB per Capita: Carta 2 venceu (0)\n");
-
-    // if (superPoder1 > superPoder2)
-    //     printf("Super Poder: Carta 1 venceu (1)\n");
-    // else
-    //     printf("Super Poder: Carta 2 venceu (0)\n");
+    // Aqui validamos o input do usuario com um switch
+    switch (entradaUsuario) {
+        case 1:
+            if (populacao1 > populacao2)
+                printf("População: Carta 1 venceu (1)\n");
+            else if (populacao1 < populacao2)
+                printf("População: Carta 2 venceu (0)\n");
+            else if (populacao1 == populacao2)
+                printf("Empate");
+            break;
+        case 2:
+            if (area1 > area2)
+                printf("Área: Carta 1 venceu (1)\n");
+            else if (area1 < area2)
+                printf("Área: Carta 2 venceu (0)\n");
+            else if (area1 == area2)
+                printf("Empate");
+            break;
+        case 3:
+            if (pib1 > pib2)
+                printf("PIB: Carta 1 venceu (1)\n");
+            else if (pib1 < pib2)
+                printf("PIB: Carta 2 venceu (0)\n");
+            else if (pib1 == pib2)
+                printf("Empate");
+            break;
+        case 4:
+            if (numeroPontoTuristicos1 > numeroPontoTuristicos2)
+                printf("Pontos Turísticos: Carta 1 venceu (1)\n");
+            else if (pib1 < pib2)
+                printf("Pontos Turísticos: Carta 2 venceu (0)\n");
+            else if (pib1 == pib2)
+                printf("Empate");
+            break;
+        case 5:
+            if (densidade1 < densidade2)
+                printf("Densidade Populacional: Carta 1 venceu (1)\n");
+            else if (densidade1 < densidade2)
+                printf("Densidade Populacional: Carta 2 venceu (0)\n");
+            else if (densidade1 == densidade2)
+                printf("Empate");
+            break;
+        // Caso o usuario selecione uma opcao invalida, retorna uma mensagem
+        // de input invalido
+        default:
+            printf("Opcao invalidar, saindo...\n");
+            break;
+    }
 
     return 0;
 }
